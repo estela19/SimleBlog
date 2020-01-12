@@ -19,7 +19,7 @@
         <ul class = "list">
             {% for post in posts %}
             <li class = "item">
-                <h3><a href="">{{post.title}}</a></h3>
+                <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
                 <div class="content">{{post.content|truncatewords:30}}</div>
                 <div class="info">
                     <div class="published-date"><span>Date | </span>{{ post.published_date }}</div>
