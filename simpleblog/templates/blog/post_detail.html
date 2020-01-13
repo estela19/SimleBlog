@@ -8,5 +8,12 @@
             <div class="content">{{ post.content|linebreaksbr }}</div>
         </li>
     </ul>
+    <a href="/">
+        <button type="button" class="btn btn-primary to-main">To Main</button></button>
+    </a>
+    <form action="{% url 'post_delete' pk=post.pk %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete Post</button>
+    </form>
 </div>
 {% endblock %}

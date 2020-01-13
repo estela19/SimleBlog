@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 from django.shortcuts import redirect
+from django.http import HttpResponse
 from django.contrib.auth import get_user_model
 
 def post_list(request):
@@ -35,3 +36,12 @@ def post_add(request):
 
     elif request.method == "GET":
         return render(request, 'blog/post_add.html')
+
+def post_delete(request, pk):
+    if request.method == 'POST':
+        post = Post.objects.get(pk=pk)
+        post.delete()
+        return render(request, 'blog/post_delete.html')
+
+    elif request.method == 'GET':
+        return HttpResponse('잘못된 접근입니다.')

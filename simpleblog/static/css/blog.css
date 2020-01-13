@@ -16,6 +16,10 @@
     padding: 0;
 }
 
+#home{
+    color : white;
+}
+
 .recent {
     text-align: center;
     width: 200px;
@@ -54,4 +58,10 @@ a:hover {
 
 .author {
     float: right;
+}
+
+.add-post{
+    position: absolute;
+    right: 50px;
+    top: 30px;
 }

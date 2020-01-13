@@ -12,7 +12,10 @@
 </head>
 <body>
     <div class="header">
-        <h1>Wa!  뉴비블로그!</h1>
+        <a class="home" href="/"><h1>Wa!  뉴비블로그!</h1></a>
+        <a class="add-post" href="{% url 'post_add' %}">
+            <button type="button" class="btn btn-info">Add Post</button>
+        </a>
     </div>
     {% block content %}
     {% endblock %}

@@ -18,12 +18,13 @@ from django.urls import path
 from blog.views import post_list
 from blog.views import post_detail
 from blog.views import post_add
-
+from blog.views import post_delete
 
 app_name = 'blog'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', post_list, name='post_list'),
     path('post/<int:pk>/', post_detail, name='post_detail'),
-    path('post/add/', post_add, name='post_add')
+    path('post/add/', post_add, name='post_add'),
+    path('post/<int:pk>/delete/', post_delete, name='post_delete')
 ]
